@@ -14,13 +14,13 @@ class Oturum extends Controller
     }
     public function kayit(Request $request)
     {
-        echo $request->input('isim');
-        echo "<br>";
-        echo $request->input('eposta');
-        echo "<br>";
-        echo bcrypt($request->input('parola'));
-        echo "<br>";
-        echo bcrypt($request->input('parolatekrar'));
+        $validatedData = $request->validate([
+            'ad' => ['required', 'min:2'],
+            'soyad' => ['required', 'min:2'],
+            'eposta' => ['required'],
+            'parola' => ['required', 'min:6', 'confirmed'],
+            'parola_confirmation' => ['required']
+        ]);
     }
 }
 

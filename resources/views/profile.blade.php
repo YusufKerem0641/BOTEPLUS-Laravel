@@ -1,4 +1,4 @@
-@include('_header')
+@include('_header', ['baslik' => 'Profil'])
   <div class="container">
     <div class="row">
       <div class="col-lg-12">

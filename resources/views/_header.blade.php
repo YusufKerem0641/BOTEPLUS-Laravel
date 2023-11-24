@@ -8,7 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Cyborg - Awesome HTML5 Template</title>
+    <title>BÖTEPLUS - {{ $baslik }}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -67,9 +67,13 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <ul class="nav">
                         <li><a href="{{ url('/') }}" class="active">Ana Sayfa</a></li>
                         <li><a href="{{ url('oyunlar') }}">Oyunlar</a></li>
+                        @guest
                         <li><a href="{{ url('uye-ol') }}">Üye Ol</a></li>
                         <li><a href="{{ url('oturum-ac') }}">Oturum Aç</a></li>
+                        @endguest
+                        @auth
                         <li><a href="{{ url('profil') }}">Profil <img src="assets/images/profile-header.jpg" alt=""></a></li>
+                        @endauth
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
