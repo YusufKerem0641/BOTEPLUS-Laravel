@@ -1,17 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use App\Http\Controllers\Oturum;
 
 Route::get('/eski', function () {
     return view('welcome');
@@ -40,3 +30,10 @@ Route::get('/yayinlar', function () {
 Route::get('/oturum-ac', function () {
     return view('login');
 });
+
+Route::get('/uye-ol', function () {
+    return view('uye-ol');
+});
+
+Route::post('/uye-kontrol', [Oturum::class, 'kontrol']);
+Route::post('/uye-kayit', [Oturum::class, 'kayit']);

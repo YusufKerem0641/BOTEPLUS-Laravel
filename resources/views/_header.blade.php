@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
   <head>
 
@@ -67,8 +67,8 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <ul class="nav">
                         <li><a href="{{ url('/') }}" class="active">Ana Sayfa</a></li>
                         <li><a href="{{ url('oyunlar') }}">Oyunlar</a></li>
-                        <li><a href="{{ url('detaylar') }}">Detaylar</a></li>
-                        <li><a href="{{ url('yayinlar') }}">Yayınlar</a></li>
+                        <li><a href="{{ url('uye-ol') }}">Üye Ol</a></li>
+                        <li><a href="{{ url('oturum-ac') }}">Oturum Aç</a></li>
                         <li><a href="{{ url('profil') }}">Profil <img src="assets/images/profile-header.jpg" alt=""></a></li>
                     </ul>   
                     <a class='menu-trigger'>
