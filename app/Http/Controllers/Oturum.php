@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kullanici;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\Password;
 
 class Oturum extends Controller
 {
@@ -18,9 +20,14 @@ class Oturum extends Controller
             'ad' => ['required', 'min:2'],
             'soyad' => ['required', 'min:2'],
             'eposta' => ['required'],
-            'parola' => ['required', 'min:6', 'confirmed'],
+            'parola' => ['required', Password::min(6)
+                ->letters()
+                ->mixedCase()
+                ->numbers()
+                ->symbols()],
             'parola_confirmation' => ['required']
         ]);
+        Kullanici::create($validatedData);
     }
 }
 

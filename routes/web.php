@@ -4,10 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Oturum;
 use Illuminate\Http\Request;
 
-Route::get('/eski', function () {
-    return view('welcome');
-});
-
 Route::get('/', function () {
     return view('index');
 });
@@ -29,7 +25,7 @@ Route::get('/yayinlar', function () {
 });
 
 Route::get('/oturum-ac', function () {
-    return view('login');
+    return view('oturum-ac');
 })->middleware('misafir');
 
 Route::get('/uye-ol', function () {
