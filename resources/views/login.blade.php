@@ -3,7 +3,11 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="page-content">
-
+        @if(session('hata'))
+        <div class="alert alert-danger">
+          {{ session('hata') }}
+        </div>
+        @endif
         <form action="/uye-kontrol" method="POST">
           @csrf
             <div class="mb-3">

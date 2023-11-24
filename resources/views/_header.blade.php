@@ -51,14 +51,14 @@ https://templatemo.com/tm-579-cyborg-gaming
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="{{ url('/') }}" class="logo">
+                    <a href="/" class="logo">
                         <img src="assets/images/logo.png" alt="">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Search End ***** -->
                     <div class="search-input">
-                      <form id="search" action="#">
-                        <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+                      <form id="search" action="/sonuc" method="GET">
+                        <input type="text" placeholder="Bir şeyler ara" name="anahtar" id='searchText' onkeypress="handle" />
                         <i class="fa fa-search"></i>
                       </form>
                     </div>
