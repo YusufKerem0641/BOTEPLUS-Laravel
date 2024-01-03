@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Oturum;
+use App\Http\Controllers\OyunDenetleyicisi;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -42,3 +43,9 @@ Route::get('/veri/{degisken}', function ($degisken) {
 Route::get('/sonuc', function (Request $request) {
     return ('Anahtar kelime: '.$request['anahtar']);
 });
+
+Route::get('/oyun-ekle', function () {
+    return view('oyun-ekle'); # oyun-ekle.blade.php
+});
+
+Route::post('/oyun-kayit', [OyunDenetleyicisi::class, 'kayit']);
