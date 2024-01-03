@@ -72,6 +72,10 @@ https://templatemo.com/tm-579-cyborg-gaming
                         <li><a href="{{ url('oturum-ac') }}">Oturum Aç</a></li>
                         @endguest
                         @auth
+                        <form method="post" action="/oturumu-kapat">
+                          @csrf
+                          <button type="submit" class="btn btn-danger">Oturumu Kapat</button>
+                        </form>
                         <li><a href="{{ url('profil') }}">Profil <img src="assets/images/profile-header.jpg" alt=""></a></li>
                         @endauth
                     </ul>   

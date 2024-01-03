@@ -3,7 +3,16 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="page-content">
-
+        @if(session('hata'))
+        <div class="alert alert-danger">
+          {{ session('hata') }}
+        </div>
+        @endif
+        @if(session('basarili'))
+        <div class="alert alert-success">
+          {{ session('basarili') }}
+        </div>
+        @endif
           <!-- ***** Banner Start ***** -->
           <div class="main-banner">
             <div class="row">
@@ -148,7 +157,7 @@
                   <li><h4>Date Added</h4><span>22/06/2036</span></li>
                   <li><h4>Hours Played</h4><span>740 H 52 Mins</span></li>
                   <li><h4>Currently</h4><span>Downloaded</span></li>
-                  <li><div class="main-border-button"><a href="#">Donwload</a></div></li>
+                  <li><div class="main-border-button"><a href="#">Download</a></div></li>
                 </ul>
               </div>
               <div class="item last-item">

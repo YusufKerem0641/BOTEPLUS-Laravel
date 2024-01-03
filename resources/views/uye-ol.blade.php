@@ -38,17 +38,17 @@
                 @enderror
               </div>
               <div class="mb-3">
-                <label for="parola" class="form-label text-white">Parola</label>
-                <input name="parola" type="password" value="{{ old('parola') }}" class="form-control" id="parola" required>
-                @error('parola')
+                <label for="password" class="form-label text-white">Parola</label>
+                <input name="password" type="password" value="{{ old('password') }}" class="form-control" id="password" required>
+                @error('password')
                   <div class="alert alert-danger">
                     {{$message}}
                   </div>
                 @enderror
               </div>
               <div class="mb-3">
-                <label for="parola_confirmation" class="form-label text-white">Parola (Tekrar)</label>
-                <input name="parola_confirmation" type="password" class="form-control" id="parola_confirmation" required>
+                <label for="password_confirmation" class="form-label text-white">Parola (Tekrar)</label>
+                <input name="password_confirmation" type="password" class="form-control" id="password_confirmation" required>
               </div>
               <div class="mb-3">
                 <label for="profil" class="form-label text-white">Profil Resmi</label>

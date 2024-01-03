@@ -21,7 +21,7 @@
             </div>
             <div class="mb-3">
                 <label for="parola" class="form-label text-white">Parola</label>
-                <input name="parola" type="password" class="form-control" id="parola" required>
+                <input name="password" type="password" class="form-control" id="password" required>
             </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" name="cookie" id="cookie">

@@ -49,3 +49,8 @@ Route::get('/oyun-ekle', function () {
 });
 
 Route::post('/oyun-kayit', [OyunDenetleyicisi::class, 'kayit']);
+
+Route::post('/oturumu-kapat', function () {
+    auth()->logout();
+    return redirect()->intended('/')->with(['basarili' => 'Başarılı bir şekilde oturumu sonlandırdınız. Görüşmek üzere.']);
+});
