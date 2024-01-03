@@ -11,14 +11,14 @@
     <title>BÖTEPLUS - {{ $baslik }}</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/assets/css/templatemo-cyborg-gaming.css">
+    <link rel="stylesheet" href="/assets/css/owl.css">
+    <link rel="stylesheet" href="/assets/css/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 <!--
 
@@ -52,10 +52,10 @@ https://templatemo.com/tm-579-cyborg-gaming
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="/" class="logo">
-                        <img src="assets/images/logo.png" alt="">
+                        <img src="/assets/images/logo.png" alt="">
                     </a>
                     <!-- ***** Logo End ***** -->
-                    <!-- ***** Search End ***** -->
+                    <!-- ***** sSearch End ***** -->
                     <div class="search-input">
                       <form id="search" action="/sonuc" method="GET">
                         <input type="text" placeholder="Bir şeyler ara" name="anahtar" id='searchText' onkeypress="handle" />
@@ -76,7 +76,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                           @csrf
                           <button type="submit" class="btn btn-danger">Oturumu Kapat</button>
                         </form>
-                        <li><a href="{{ url('profil') }}">Profil <img src="assets/images/profile-header.jpg" alt=""></a></li>
+                        <li><a href="{{ url('profil') }}">{{ auth()->user()->ad }} {{ auth()->user()->soyad }}<img src="storage/profil/{{ auth()->user()->profil }}" alt=""></a></li>
                         @endauth
                     </ul>   
                     <a class='menu-trigger'>

@@ -1,12 +1,19 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Oturum;
-use App\Http\Controllers\OyunDenetleyicisi;
+use App\Models\Oyun;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Oturum;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OyunDenetleyicisi;
 
 Route::get('/', function () {
-    return view('index');
+    $oyunlar = Oyun::all();
+    return view('index', ['oyunlar' => $oyunlar]);
+});
+
+Route::get('/oyun/{degisken}', function ($degisken) {
+    $oyun = Oyun::find($degisken);
+    return view('oyun', ['oyun' => $oyun]);
 });
 
 Route::get('/oyunlar', function () {
@@ -16,10 +23,6 @@ Route::get('/oyunlar', function () {
 Route::get('/profil', function () {
     return view('profile');
 })->middleware('uye');
-
-Route::get('/detaylar', function () {
-    return view('details');
-});
 
 Route::get('/yayinlar', function () {
     return view('streams');

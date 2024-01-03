@@ -1,4 +1,4 @@
-@include('_header', ['baslik' => 'Detaylar'])
+@include('_header', ['baslik' => 'Oyun'])
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
@@ -10,12 +10,11 @@
               <div class="feature-banner header-text">
                 <div class="row">
                   <div class="col-lg-4">
-                    <img src="assets/images/feature-left.jpg" alt="" style="border-radius: 23px;">
+                    <img src="/storage/kapak/{{$oyun->kapak}}" alt="" style="border-radius: 23px;">
                   </div>
                   <div class="col-lg-8">
                     <div class="thumb">
-                      <img src="assets/images/feature-right.jpg" alt="" style="border-radius: 23px;">
-                      <a href="https://www.youtube.com/watch?v=r1b03uKWk_M" target="_blank"><i class="fa fa-play"></i></a>
+                    <iframe width="695" height="391" src="https://www.youtube.com/embed/{{$oyun->fragman}}" title="Yabani Kuşlar - 8K (60 fps) Ultra HD - Doğa Sesleri (Renkli Dinamik)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                   </div>
                 </div>
@@ -28,7 +27,7 @@
           <div class="game-details">
             <div class="row">
               <div class="col-lg-12">
-                <h2>Fortnite Details</h2>
+                <h2>{{$oyun->ad}}</h2>
               </div>
               <div class="col-lg-12">
                 <div class="content">

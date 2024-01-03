@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 16 Ara 2023, 15:42:56
--- Sunucu sürümü: 10.4.32-MariaDB
--- PHP Sürümü: 8.2.12
+-- Üretim Zamanı: 22 Ara 2023, 13:21:58
+-- Sunucu sürümü: 10.4.28-MariaDB
+-- PHP Sürümü: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -54,6 +54,13 @@ CREATE TABLE `kullanici` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `profil` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Tablo döküm verisi `kullanici`
+--
+
+INSERT INTO `kullanici` (`id`, `ad`, `soyad`, `eposta`, `password`, `remember_token`, `created_at`, `updated_at`, `profil`) VALUES
+(1, 'Gazi', 'Üniversitesi', 'iletisim@gazi.edu.tr', '$2y$10$HOLM2l.DDafcWN28QaEfUOiI9K/yOrjEJl3JqZssyhytomcBfDgsi', NULL, '2023-12-22 07:50:50', '2023-12-22 07:50:50', 'kfDGk9THvnOLvh6PaKEGakhxY88PTTKLnUXXRgAH.png');
 
 -- --------------------------------------------------------
 
@@ -105,6 +112,23 @@ CREATE TABLE `oyun` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Tablo döküm verisi `oyun`
+--
+
+INSERT INTO `oyun` (`id`, `ad`, `kategori`, `fiyat`, `indirilme_sayisi`, `yas_siniri`, `yildiz`, `kapak`, `fragman`, `tarih`, `created_at`, `updated_at`) VALUES
+(1, 'Need for Speed', 'Araba Yarışı', 300, 5, '+13', 4, 'hzuXFmHPA323JR779rENBFhNwHlEhD5aW1TyKxrq.jpg', 'te8keFz5ZdI', '2023-12-22', '2023-12-22 08:48:47', '2023-12-22 08:48:47'),
+(2, 'Fall Guys', 'Eğlence', 59, 3, '13', 2, 'h9pwbOaWH0NadKmTqJVFtZj9BGC2SfSyqKdkmDeh.jpg', 'Wj3dUvGLjNQ', '2003-12-11', '2023-12-22 08:48:54', '2023-12-22 08:48:54'),
+(3, 'Stickman Hook', 'Platform oyunu', 10, 10, '5', 5, 'pt5Ld9sER9iFS3af6zcMwJFB9RLq9uiCHm1kykDk.png', 'SS-nSAyt9tI', '2023-12-22', '2023-12-22 08:48:59', '2023-12-22 08:48:59'),
+(4, 'Uno', 'Masa Oyunu', 2500, 16, '+13', 5, 'ZqtktYa65hALUNO36QSWfAsst15FUOeFFZdfanLK.webp', 'OT0_JQK3P8I', '2023-12-05', '2023-12-22 08:49:12', '2023-12-22 08:49:12'),
+(5, 'Super Mario', 'çocuk', 30, 10, '7+', 4, 'VTcDDsnf8LLeWF3jzMBRJ5CwRV8hmC6vhk0G3P4S.jpg', '_zPST3SKoB0', '2023-12-22', '2023-12-22 08:49:14', '2023-12-22 08:49:14'),
+(6, 'Cyberpunk 2077', 'FPS-RP', 800, 3, '18', 4, 'zpeh9DmlkKSZj0sYRdv0RYO1ea7MRFGhDLk6BAHg.jpg', '8X2kIfS6fb8', '2023-12-22', '2023-12-22 08:50:11', '2023-12-22 08:50:11'),
+(7, 'PUBG', 'savaş', 100, 150, '18', 4, 'D7IsbEH9jhCIcQCZ0wjYj4nr7eIOr2UQst84kGgZ.jpg', 'uCd6tbUAy6o', '2018-02-09', '2023-12-22 08:50:20', '2023-12-22 08:50:20'),
+(8, 'Call Of Duty:2', 'savaş', 600, 100, '13', 4, 'X9Cien0tGtVT8xHaQMkjbVxwHDFeF5YgvS0ObJfX.jpg', 'SOxtxw6cMac', '2023-12-22', '2023-12-22 08:50:31', '2023-12-22 08:50:31'),
+(9, 'Red Dead Redemption 2', 'aksiyon-macera', 1500, 150, '18', 5, '6zJhJwuvb0B08PlcksU96OGVOzyTlxNeICOgBugN.jpg', 'gmA6MrX81z4', '2023-12-22', '2023-12-22 08:50:40', '2023-12-22 08:50:40'),
+(10, 'Minecraft', 'survival', 250, 127, '10', 5, 'qKWrwCMStLEWiTN8EzpaQNtJ9O9u0xxxewU4XBqc.jpg', 'MmB9b5njVbA', '2023-12-22', '2023-12-22 08:52:14', '2023-12-22 08:52:14'),
+(11, 'Diablo IV', 'aksiyon', 1000, 100, '18', 0, 'T03TOdNZh5H4iXlPLhiZro4Dq1hVSXfRc27aJSEN.jpg', 'Ro26B394ZBM', '2023-06-05', '2023-12-22 08:53:41', '2023-12-22 08:53:41');
 
 -- --------------------------------------------------------
 
@@ -195,7 +219,7 @@ ALTER TABLE `failed_jobs`
 -- Tablo için AUTO_INCREMENT değeri `kullanici`
 --
 ALTER TABLE `kullanici`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `migrations`
@@ -207,7 +231,7 @@ ALTER TABLE `migrations`
 -- Tablo için AUTO_INCREMENT değeri `oyun`
 --
 ALTER TABLE `oyun`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `personal_access_tokens`
