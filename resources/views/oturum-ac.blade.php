@@ -8,6 +8,11 @@
           {{ session('hata') }}
         </div>
         @endif
+        @if(session('basarili'))
+        <div class="alert alert-success">
+          {{ session('basarili') }}
+        </div>
+        @endif
         <form action="/uye-kontrol" method="POST">
           @csrf
             <div class="mb-3">

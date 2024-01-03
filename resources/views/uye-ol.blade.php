@@ -8,7 +8,7 @@
             {{ session('hata') }}
           </div>
           @endif
-          <form action="/uye-kayit" method="POST">
+          <form action="/uye-kayit" method="POST" enctype="multipart/form-data">
             @csrf
               <div class="mb-3">
                   <label for="ad" class="form-label text-white">Ad</label>
@@ -49,6 +49,15 @@
               <div class="mb-3">
                 <label for="parola_confirmation" class="form-label text-white">Parola (Tekrar)</label>
                 <input name="parola_confirmation" type="password" class="form-control" id="parola_confirmation" required>
+              </div>
+              <div class="mb-3">
+                <label for="profil" class="form-label text-white">Profil Resmi</label>
+                <input name="profil" type="file" value="{{ old('profil') }}" class="form-control" id="profil" required>
+                @error('profil')
+                  <div class="alert alert-danger">
+                    {{$message}}
+                  </div>
+                @enderror
               </div>
               <button type="submit" class="btn btn-primary">Üye Ol</button>
           </form>

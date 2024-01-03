@@ -13,5 +13,5 @@ class Kullanici extends Model
 
     protected $primaryKey = "id";
 
-    protected $fillable = ["ad", "soyad", "eposta", "parola"];
+    protected $fillable = ["ad", "soyad", "eposta", "parola", "profil"];
 }

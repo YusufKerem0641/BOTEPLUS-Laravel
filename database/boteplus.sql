@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 24 Kas 2023, 13:17:37
+-- Üretim Zamanı: 08 Ara 2023, 13:03:46
 -- Sunucu sürümü: 10.4.28-MariaDB
 -- PHP Sürümü: 8.2.4
 
@@ -51,7 +51,8 @@ CREATE TABLE `kullanici` (
   `parola` varchar(255) NOT NULL,
   `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `profil` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -80,7 +81,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (20, '2023_11_17_083307_kullanici_tablosu_olustur', 6),
 (21, '2023_11_17_105004_kullanici_tablosunu_degistir', 6),
 (22, '2023_11_17_111022_kullanici_tablosunu_degistir_2', 6),
-(23, '2023_11_24_075011_oyun_tablosu_olustur', 7);
+(23, '2023_11_24_075011_oyun_tablosu_olustur', 7),
+(24, '2023_12_08_140638_profil_alanı_ekle', 8);
 
 -- --------------------------------------------------------
 
@@ -198,7 +200,7 @@ ALTER TABLE `kullanici`
 -- Tablo için AUTO_INCREMENT değeri `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `oyun`

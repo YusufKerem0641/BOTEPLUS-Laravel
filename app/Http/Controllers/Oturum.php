@@ -25,9 +25,15 @@ class Oturum extends Controller
                 ->mixedCase()
                 ->numbers()
                 ->symbols()],
-            'parola_confirmation' => ['required']
+            'parola_confirmation' => ['required'],
+            'profil' => ['required']
         ]);
+        $validatedData['parola'] = bcrypt($validatedData['parola']);
+        $adres = $request->file('profil')->store('public/profil');
+        $adres = pathinfo($adres, PATHINFO_BASENAME);
+        $validatedData['profil'] = $adres;
         Kullanici::create($validatedData);
+        return redirect('/oturum-ac')->with('basarili','Üyelik kaydı başarılı, bilgilerinizle oturum açabilirsiniz.');
     }
 }
 

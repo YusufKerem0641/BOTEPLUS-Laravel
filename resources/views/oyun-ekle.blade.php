@@ -8,7 +8,7 @@
             {{ session('hata') }}
           </div>
           @endif
-          <form action="/oyun-kayit" method="POST">
+          <form action="/oyun-kayit" method="POST" enctype="multipart/form-data">
             @csrf
               <div class="mb-3">
                   <label for="ad" class="form-label text-white">Ad</label>

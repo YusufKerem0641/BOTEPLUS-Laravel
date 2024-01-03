@@ -20,6 +20,10 @@ class OyunDenetleyicisi extends Controller
             'fragman' => ['required'],
             'tarih' => ['required'],
         ]);
+        $adres = $request->file('kapak')->store('public/kapak');
+        # Bir dosya yolu adresinden sadece dosya adını ayıklamak
+        $adres = pathinfo($adres, PATHINFO_BASENAME);
+        $validatedData['kapak'] = $adres;
         Oyun::create($validatedData);
     }
 }
