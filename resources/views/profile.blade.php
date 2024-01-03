@@ -3,6 +3,11 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="page-content">
+          @if(session('basarili'))
+          <div class="alert alert-success">
+            {{ session('basarili') }}
+          </div>
+          @endif
 
           <!-- ***** Banner Start ***** -->
           <div class="row">
@@ -18,7 +23,7 @@
                       <h4>{{ auth()->user()->ad }} {{ auth()->user()->soyad }}</h4>
                       <p>You Haven't Gone Live yet. Go Live By Touching The Button Below.</p>
                       <div class="main-border-button">
-                        <a href="#">Start Live Stream</a>
+                        <a href="/bilgilerim">Bilgilerimi Güncelle</a>
                       </div>
                     </div>
                   </div>

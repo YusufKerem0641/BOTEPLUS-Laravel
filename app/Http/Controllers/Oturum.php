@@ -45,5 +45,22 @@ class Oturum extends Controller
         Kullanici::create($validatedData);
         return redirect('/oturum-ac')->with('basarili','Üyelik kaydı başarılı, bilgilerinizle oturum açabilirsiniz.');
     }
+
+    public function guncelle(Request $request)
+    {
+        $validatedData = $request->validate([
+            'ad' => ['required', 'min:2'],
+            'soyad' => ['required', 'min:2'],
+            'eposta' => ['required']
+        ]);
+
+        $uye = Kullanici::find(auth()->user()->id);
+        # Güncelleme yapılacak üyeyi bul
+
+        $uye->update($validatedData);
+        # Yeni bilgilerle üyeyi güncelle
+
+        return redirect('/profil')->with('basarili','Bilgileriniz başarıyla güncellendi.');
+    }
 }
 

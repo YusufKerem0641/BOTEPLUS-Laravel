@@ -16,8 +16,17 @@ Route::get('/oyun/{degisken}', function ($degisken) {
     return view('oyun', ['oyun' => $oyun]);
 });
 
+Route::get('/oyun-sil/{degisken}', function ($degisken) {
+    $oyun = Oyun::find($degisken);
+    $oyun->delete();
+})->middleware('yonetici');
+
 Route::get('/oyunlar', function () {
     return view('browse');
+});
+
+Route::get('/bilgilerim', function () {
+    return view('bilgilerim'); # bilgilerim.blade.php
 });
 
 Route::get('/profil', function () {
@@ -38,6 +47,7 @@ Route::get('/uye-ol', function () {
 
 Route::post('/uye-kontrol', [Oturum::class, 'kontrol']);
 Route::post('/uye-kayit', [Oturum::class, 'kayit']);
+Route::post('/guncelle', [Oturum::class, 'guncelle']);
 
 Route::get('/veri/{degisken}', function ($degisken) {
     return ('Sayı: '.$degisken);

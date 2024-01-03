@@ -11,6 +11,6 @@ class Kullanici extends Authenticatable
 
     protected $table = 'kullanici';
     protected $primaryKey = 'id';
-    protected $fillable = ['ad', 'soyad', 'eposta', 'password', 'profil'];
+    protected $fillable = ['ad', 'soyad', 'eposta', 'password', 'profil', 'statu'];
     protected $hidden = ['password', 'remember_token'];
 }
